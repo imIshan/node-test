@@ -1,16 +1,22 @@
-const utils = require('./utils')
+const expect = require('expect');
+const utils = require('./utils');
 
 it('should add two numbers', () => {
-    var res = utils.add(11, 12);
-    if (res !== 23) {
-        throw new Error(`Expected 23 but got ${res}`);
-    }
+    let res = utils.add(11, 12);
+    expect(res).toBe(23).toBeA('number');
 });
 
 it('should square a number', () => {
-    var res = utils.square(3);
-    if(res !== 9){
-        throw new Error(`Expected 9 but got ${res}`);
-    }
+    let res = utils.square(3);
+    expect(res).toBe(9).toBeA('number');
+});
+
+it('should set first name and last name', () => {
+   let user = {};
+   let res = utils.setName(user, 'test user');
+    expect(res).toInclude({
+        firstName: 'test',
+        lastName: 'user'
+    })
 });
 
