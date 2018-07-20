@@ -20,3 +20,17 @@ it('should set first name and last name', () => {
     })
 });
 
+it('should async add two numbers', (done) => {
+    utils.asyncAdd(8, 6, (sum) => {
+        expect(sum).toBe(14).toBeA('number');
+        done();
+    });
+});
+
+it('should async square two numbers', (done) => {
+    utils.asyncSquare(4, (square) => {
+        expect(square).toBe(16).toBeA('number');
+        done();
+    })
+});
+
